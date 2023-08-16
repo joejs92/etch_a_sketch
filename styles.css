@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh;
+}
+
+#topContainer {
+    display: flex;
+    background-color: blue;
+    flex-basis: 100px;
+}
+
+#bottomContainer {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+#grid {
+    display: flex;
+    flex: auto;
+    border: 2px solid black;
+}
+
+#row {
+    display: flex;
+    flex: auto;
+}
