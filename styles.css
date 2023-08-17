@@ -1,13 +1,13 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 200vh;
+    min-height: 100vh;
 }
 
 #topContainer {
     display: flex;
     background-color: blue;
-    flex-basis: 100px;
+    flex-basis: 75px;
 }
 
 #bottomContainer {
@@ -16,13 +16,13 @@ body {
     flex: auto;
 }
 
-#grid {
+.grid {
     display: flex;
     flex: auto;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
-#row {
+.row {
     display: flex;
     flex: auto;
 }
