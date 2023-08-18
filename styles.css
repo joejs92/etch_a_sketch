@@ -6,6 +6,8 @@ body {
 
 #topContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: blue;
     flex-basis: 75px;
 }
@@ -26,3 +28,14 @@ body {
     display: flex;
     flex: auto;
 }
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    background-color: white;
+    color: black;
+    margin-top: 8px;
+    border-radius: 5px;
+ }

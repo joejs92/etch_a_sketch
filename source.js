@@ -2,6 +2,14 @@ let userInput = 16;
 let gridSize = userInput;
 
 function createGrid(gridSize) {
+    let btns2 = document.querySelectorAll('.grid');
+        for (let i=0; i< btns2.length; i++) {
+            btns2[i].remove();
+        }
+    let btns1 = document.querySelectorAll('.row');
+        for (let i=0; i< btns1.length; i++) {
+            btns1[i].remove();
+        }
     while (gridSize > 0){
         const row = document.createElement('div');
         row.className = "row";
@@ -16,6 +24,10 @@ function createGrid(gridSize) {
         bottomContainer.appendChild(row);
         gridSize --;
     }
+    let btns = document.querySelectorAll('.grid');
+    for (let i=0; i< btns.length; i++) {
+        btns[i].addEventListener('mouseover',changeColor);
+    }
 }
 
 function changeColor(){
@@ -24,9 +36,31 @@ function changeColor(){
     change.style.backgroundColor = "black";
 }
 
-createGrid(gridSize);
-
-let btns = document.querySelectorAll('.grid');
-for (let i=0; i< btns.length; i++) {
-    btns[i].addEventListener('mouseover',changeColor);
+function reset(){
+    let size = prompt("Please enter a grid size.");
+    if (isNaN(size) == true|| size <= 0 || size == "" || size > 100) {
+        let btns2 = document.querySelectorAll('.grid');
+        for (let i=0; i< btns2.length; i++) {
+            btns2[i].remove();
+        }
+        let btns1 = document.querySelectorAll('.row');
+        for (let i=0; i< btns1.length; i++) {
+            btns1[i].remove();
+        }
+        alert("Try again, and please enter a Number between 1 and 100 inclusive.");
+        reset();
+    }
+    else {
+        userInput = size;
+        let gridSize = userInput;
+        createGrid(gridSize);
+        console.log("Clicked")
+    }
 }
+
+let btn = document.querySelector("#btn");
+btn.addEventListener("click",reset);
+
+
+
+
